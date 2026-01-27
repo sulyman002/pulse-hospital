@@ -2,7 +2,8 @@
 
 :root {
   --primary-color: #2254D3;
-  --secondary-color: #22D389;
+  --secondary-color:#071232;
+  --tertiary-color: #22D389;
 
   /* font size */
   --text-xs: 0.75rem;   /* 12px */
@@ -13,22 +14,32 @@
   --text-2xl: 1.5rem;   /* 24px */
   --text-3xl: 1.875rem; /* 30px */
   --text-4xl: 2.25rem;  /* 36px */
-  --text-5xl: 3rem;     /* 48px */
+  --text-5xl: 2.5rem;    /* 40px */
+  --text-6xl: 3rem;      /* 48px */
 
 }
 
 @layer utilities {
+  /* color classes  */
   .primary-text {
     color: var(--primary-color);
   }
   .primary-bg {
     background-color: var(--primary-color);
   }
+
   .secondary-text {
     color: var(--secondary-color);
   }
   .secondary-bg {
     background-color: var(--secondary-color);
+  }
+
+  .tertiary-text {
+    color: var(--tertiary-color);
+  }
+  .tertiary-bg {
+    background-color: var(--tertiary-color);
   }
 
   /* font sizes */
@@ -41,4 +52,5 @@
   .text-3xl { font-size: var(--text-3xl); }
   .text-4xl { font-size: var(--text-4xl); }
   .text-5xl { font-size: var(--text-5xl); }
+  .text-6xl { font-size: var(--text-6xl); }
 }
