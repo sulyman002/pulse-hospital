@@ -3,9 +3,9 @@ import { Sofia } from "next/font/google";
 
 
 export const sofia = Sofia({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
-    variable: "--font-sofia",
+  weight: "400",      
+  subsets: ["latin"], 
+  display: "swap",    
 });
 
 const metropolis = localFont({
