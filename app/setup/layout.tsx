@@ -25,10 +25,10 @@ const SetupLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         {/* Main Container */}
-    <div className="bg-white rounded-lg border border-[#DFE8FC] p-8">
+    <div className="bg-white space-y-6 rounded-lg border border-[#DFE8FC] p-4">
           {/* Tab Navigation */}
-          <div className="flex border-b border-[#E6E8EC] ">
-            <div className="gap-8 mb-8 flex flex-1">
+          <div className="flex flex-col md:flex-row md:gap-0 gap-6 items-center border-b border-[#E6E8EC] ">
+            <div className="gap-8 flex flex-1">
                 {tabs.map((tab) => {
               const isActive = pathname === tab.path;
               return (
@@ -36,7 +36,7 @@ const SetupLayout = ({ children }: { children: React.ReactNode }) => {
                   key={tab.path}
                   onClick={() => router.push(tab.path)}
                   className={`
-                    pb-4 px-2 text-sm font-medium transition-colors relative
+                    pb-4 px-2 text-sm font-medium transition-colors cursor-pointer relative
                     ${
                       isActive
                         ? "primary-text text-base"
@@ -52,7 +52,9 @@ const SetupLayout = ({ children }: { children: React.ReactNode }) => {
               );
             })}
             </div>
-            <button className="text-base font-700 text-semibold rounded-lg px-4 py-2 text-white tertiary-bg ">Next</button>
+            <div className="flex w-full md:w-auto">
+                <button className="text-base w-full font-700 text-semibold rounded-lg px-12 py-1 text-white tertiary-bg cursor-pointer ">Next</button>
+            </div>
           </div>
 
           {/* Tab Content */}
