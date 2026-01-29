@@ -232,6 +232,7 @@
 
 "use client";
 
+import { workingSchedule } from "@/app/lib/data";
 import { X } from "lucide-react";
 
 const PrimaryInformationPage = () => {
@@ -314,8 +315,55 @@ const PrimaryInformationPage = () => {
           <label className="block text-sm text-[#8E919C] mb-3">
             Setup working schedule
           </label>
-          <div className="bg-[#F5F8FE] rounded-lg p-6 flex flex-col gap-3">
-          
+
+          <div className="bg-[#F5F8FE] rounded-lg p-6 flex flex-col gap-3 flex-1">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="text-[#8E919C] text-sm border-b border-[#DFE8FC]  ">
+                  <th className="text-left w-1/2">Day</th>
+                  <th className="text-left">From</th>
+                  <th className="text-left">To</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(workingSchedule).map(([day, schedule]) => (
+                  <tr key={day} className="border-b border-[#DFE8FC]">
+                    <td className="text-sm font-medium text-[#1D1F24] py-6">
+                      <label className="flex items-center gap-4">
+                        <input
+                          type="checkbox"
+                          checked={schedule.enabled}
+                          className="w-5 h-5 primary-text rounded"
+                        />
+                        <span className="text-sm">{day}</span>
+                      </label>
+                    </td>
+                    <td className="text-sm secondary-text py-2">
+                      <input
+                        type="time"
+                        value={schedule.from}
+                        disabled={!schedule.enabled}
+                        className="px-2 py-1 border border-[#DFE8FC] rounded bg-white text-sm disabled:bg-gray-100"
+                      />
+                    </td>
+                    <td className="text-sm text-[#8E919C] py-2">
+                      <input
+                        type="time"
+                        value={schedule.from}
+                        disabled={!schedule.enabled}
+                        className="px-2 py-1 border border-[#DFE8FC] rounded bg-white text-sm disabled:bg-gray-100"
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="flex w-full mt-6">
+            <button className="text-base w-full font-700 text-semibold rounded-lg px-12 py-1 text-white primary-bg cursor-pointer ">
+              Next
+            </button>
           </div>
         </div>
       </div>
