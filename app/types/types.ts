@@ -14,4 +14,12 @@ type WeeklySchedule = {
   SUNDAY: DaySchedule
 }
 
-export type { DaySchedule, WeeklySchedule }
+type pharmacyTab = {
+  icon: string,
+  title: string,
+  path: string
+}
+export type { DaySchedule, WeeklySchedule, pharmacyTab }
+
+
+

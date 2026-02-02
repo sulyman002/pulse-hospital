@@ -1,4 +1,5 @@
-import { WeeklySchedule } from "../types/types";
+import path from "path";
+import { pharmacyTab, WeeklySchedule } from "../types/types";
 
 export const tabs = [
   { name: "Primary information", path: "/setup-pharmacy/primary-information" },
@@ -22,3 +23,21 @@ export const people = [
   { id: 2, name: 'Curry' },
   { id: 3, name: 'LeBron' },
 ]
+
+export const pharmacyDashboardTabs: pharmacyTab[] = [
+  {
+    icon: "ShoppingBag", title: "Home", path: "/pharmacy-dashboard/home"
+  },
+  {
+    icon: "User", title: "Pharmacists", path: "/pharmacy-dashboard/pharmacists"
+  },
+  {
+    icon: "Mail", title: "Orders",   path: "/pharmacy-dashboard/orders"
+  },
+  {
+    icon: "CirclePile", title: "Inventory", path: "/pharmacy-dashboard/inventory"
+  },
+  {
+    icon: "Settings", title: "Settings", path: "/pharmacy-dashboard/settings"
+  }
+] 
