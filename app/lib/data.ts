@@ -2,8 +2,8 @@ import { WeeklySchedule } from "../types/types";
 
 export const tabs = [
   { name: "Primary information", path: "/setup-pharmacy/primary-information" },
-  { name: "Services", path: "/setup-pharmacy/services" },
   { name: "Locations", path: "/setup-pharmacy/locations" },
+  { name: "Special Drug availability", path: "/setup-pharmacy/special-drug" },
 ];
 
 
