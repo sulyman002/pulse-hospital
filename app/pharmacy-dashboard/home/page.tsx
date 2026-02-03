@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const page = () => {
   const userName = "Sulyman";
   const date = new Date();
@@ -27,11 +29,20 @@ const page = () => {
         </div>
       </div>
       {/* blue banner */}
-        <div className="mt-6 rounded-lg primary-bg p-8 "> 
-            <div className="flex flex-col">
-                
-
-
+        <div className="relative mt-6 rounded-lg primary-bg p-8 "> 
+            <div className="flex flex-col gap-2">
+                <h2 className="font-700 text-xl text-white font-semibold">
+                  Add Pharmacists
+                </h2>
+                <p className="w-134 text-base text-white font-medium">
+                  Provide some basic information to get started.Provide some basic information to get started.
+                </p>
+                <button className="tertiary-bg text-white font-700 font-medium text-center rounded-md">
+                  Add Pharmacist
+                </button>
+            </div>
+            <div className="absolute h-full left-0  ">
+              <Image src="/images/blue-banner-pattern.svg" alt="Blue Banner" fill width={100} height={100} />
             </div>
         </div>
 
