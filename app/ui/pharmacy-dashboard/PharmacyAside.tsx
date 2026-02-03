@@ -1,12 +1,19 @@
-
+"use client"
 import { pharmacyDashboardTabs } from "@/app/lib/data"
 import * as Icons from "lucide-react"
+import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
+    
 
 
 const PharmacyAside = () => {
+
+    const pathname = usePathname();
+
+
   return (
-    <section className="w-48 flex flex-col bg-[#8C92A3]/40">
+    <aside className="w-48 flex flex-col bg-[#8C92A3]/40">
         {/* pattern */}
         <div className=""></div>
         {/* Menus */}
@@ -14,13 +21,13 @@ const PharmacyAside = () => {
             <div className="flex flex-1 flex-col gap-6">
                 {
                     pharmacyDashboardTabs.map((tab, index) => {
-                        const Icon = Icons[tab.icon as keyof typeof Icons];
+                        const Icon = Icons[tab.icon as keyof typeof Icons] as Icons.LucideIcon;
+                        const isActive = pathname.startsWith(tab.path);
                         return (
-                        <div key={index} className="flex items-center gap-2 rounded-lg p-2">
+                        <Link href={tab.path} key={index} className={`flex items-center gap-2 rounded-lg p-2 ${isActive ? "bg-[#DFE8FC] primary-text" : "text-[#8E919C]"}`}>
                             <Icon size={20} />
-                            <p className="text-base font-500">{tab.name}</p>
-
-                        </div>
+                            <p className="text-base font-500">{tab.title}</p>
+                        </Link>
                     )
                     })
                 }
@@ -32,7 +39,7 @@ const PharmacyAside = () => {
         </div>
         {/* pattern */}
         <div className=""></div>
-    </section>
+    </aside>
   )
 }
 
