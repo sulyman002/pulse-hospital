@@ -15,9 +15,9 @@ const PharmacyAside = () => {
   return (
     <aside className="w-48 flex flex-col bg-[#8C92A3]/40">
         {/* pattern */}
-        <div className=""></div>
+        <div className="h-20"></div>
         {/* Menus */}
-        <div className="flex flex-col">
+        <div className="flex flex-col px-6 h-2/3 py-4">
             <div className="flex flex-1 flex-col gap-6">
                 {
                     pharmacyDashboardTabs.map((tab, index) => {
@@ -32,7 +32,7 @@ const PharmacyAside = () => {
                     })
                 }
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center gap-2 cursor-pointer">
                 <Image src="/sign-out.svg" alt="sign-out" width={24} height={24} />
                 <p className="text-[#F01919] text-base font-500">Logout</p>
             </div>
