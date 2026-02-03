@@ -29,23 +29,52 @@ const page = () => {
         </div>
       </div>
       {/* blue banner */}
-        <div className="relative mt-6 rounded-lg primary-bg p-8 "> 
-            <div className="flex flex-col gap-2">
-                <h2 className="font-700 text-xl text-white font-semibold">
-                  Add Pharmacists
-                </h2>
-                <p className="w-134 text-base text-white font-medium">
-                  Provide some basic information to get started.Provide some basic information to get started.
-                </p>
-                <button className="tertiary-bg text-white font-700 font-medium text-center rounded-md">
-                  Add Pharmacist
-                </button>
-            </div>
-            <div className="absolute h-full left-0  ">
-              <Image src="/images/blue-banner-pattern.svg" alt="Blue Banner" fill width={100} height={100} />
-            </div>
+      <div className="relative mt-6 rounded-lg primary-bg p-8 overflow-hidden">
+        <div className="flex flex-col gap-2">
+          <h2 className="font-700 text-xl text-white font-semibold">
+            Add Pharmacists
+          </h2>
+          <p className="w-134 text-base text-white ">
+            Provide some basic information to get started.Provide some basic
+            information to get started.
+          </p>
+          <button className="tertiary-bg w-40 py-2 text-white font-700 font-medium text-center rounded-md">
+            Add Pharmacist
+          </button>
         </div>
+        <div className="absolute right-0 bottom-0 h-full w-4/5 pointer-events-none">
+          <Image
+            src="/blue-banner-pattern.svg"
+            alt="Blue Banner"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
 
+      {/* Order */}
+      <div className="bg-[#DFE8FC4D] w-full flex items-center justify-center py-16 mt-6 rounded-xl">
+        {/* right line */}
+        <div className="h-0.5 w-1/3 bg-[#DDDDDF]"></div>
+        {/* Text here */}
+        <div className="font-500 text-base text-[#8E919C] mx-4">
+          You have no orders
+        </div>
+        {/* left line */}
+        <div className="h-0.5 w-1/3 bg-[#DDDDDF]"></div>
+      </div>
+
+      {/* Request */}
+      <div className="bg-[#DFE8FC4D] w-full flex items-center justify-center py-16 mt-6 rounded-xl">
+        {/* right line */}
+        <div className="h-0.5 w-1/3 bg-[#DDDDDF]"></div>
+        {/* Text here */}
+        <div className="font-500 text-base text-[#8E919C] mx-4">
+          You have no pending prescription requests 
+        </div>
+        {/* left line */}
+        <div className="h-0.5 w-1/3 bg-[#DDDDDF]"></div>
+      </div>
     </section>
   );
 };
