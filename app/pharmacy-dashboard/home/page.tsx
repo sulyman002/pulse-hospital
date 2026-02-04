@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const page = () => {
+const Home = () => {
   const userName = "Sulyman";
   const date = new Date();
   const hours = date.getHours();
@@ -8,11 +8,15 @@ const page = () => {
   const secs = date.getSeconds();
   const ampm = hours >= 12 ? "PM" : "AM";
   const formattedHours = hours % 12 || 12;
-  // const formattedHoursDisplay = formattedHours < 10 ? `0${formattedHours}` : formattedHours;
   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
   const formattedSeconds = secs < 10 ? `0${secs}` : secs;
   const currentTime = `${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}`;
+  const handleClick = () => {
+
+  }
   return (
+
+    
     <section className="py-4 px-20 flex flex-col">
       <div className="flex items-center justify-between pb-6 border-b border-[#E6E8EC]">
         <div className="flex items-center">
@@ -79,4 +83,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Home;
