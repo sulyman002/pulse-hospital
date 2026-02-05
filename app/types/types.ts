@@ -26,5 +26,10 @@ export interface PharmacistData {
   cardImage: string;
 }
 
+export interface listBoxSort {
+  id: string | number;
+  name: string;
+}
+
 export type { DaySchedule, WeeklySchedule, pharmacyTab };
 

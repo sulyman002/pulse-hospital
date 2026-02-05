@@ -18,13 +18,13 @@ const PharmacistCard = ({
 }: PharmacistCardProps) => {
   return (
     <div
-      className={`rounded-md bg-[#DFE8FC4D] relative group p-5 cursor-pointer transition-all hover:shadow-md ${className}`}
+      className={`rounded-md bg-[#DFE8FC4D] relative group py-8 cursor-pointer transition-all hover:shadow-md ${className}`}
       onClick={onCardClick}
     >
-      <div className="absolute group:hover top-5 right-5 h-5 w-5 rounded-full bg-[#DFE8FC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <ChevronDown size={16} />
+      <div className="absolute group:hover top-3 right-3 h-5 w-5 rounded-full bg-[#DFE8FC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <ChevronDown size={16} className="primary-text" />
       </div>
-      <div className="flex items-center justify-center gap-4">
+      <div className="flex items-center justify-center flex-col gap-4">
         <div className="h-30 w-30 rounded-full relative overflow-hidden shrink-0">
           <Image
             src={cardImage}

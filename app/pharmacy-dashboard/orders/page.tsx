@@ -1,14 +1,19 @@
-import { pharmacistList } from "@/app/lib/data";
+"use client";
+
+import { listboxSort, pharmacistList } from "@/app/lib/data";
 import { PharmacistData } from "@/app/types/types";
 import PharmacistCard from "@/app/ui/PharmacistCard";
-import { Plus, Search } from "lucide-react";
-
+import { ChevronDown, Plus, Search } from "lucide-react";
+import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from "@headlessui/react";
+import { useState } from "react";
 
 const Pharmacy = () => {
   const handleCardClick = (pharmacist: PharmacistData) => {
     console.log("Clicked pharmacist:", pharmacist);
     // Add your logic here (e.g., navigate to detail page, open modal, etc.)
   };
+
+  const [sort, setSort] = useState(listboxSort[0])
   return (
     <section className="py-4 px-20 flex flex-col">
       <div className="flex items-center justify-between pb-6 border-b border-[#E6E8EC]">
@@ -24,6 +29,35 @@ const Pharmacy = () => {
 
       <div className="mt-6 flex items-center gap-2">
         {/* Two buttons */}
+        {/* Listbox button */}
+        <Listbox value={sort} onChange={setSort}>
+          <div className="relative">
+            <ListboxButton
+              className={`flex items-center rounded-lg bg-[#071232] py-1 px-2 gap-6`}
+            >
+              <p className="text-white text-sm">{sort.name}</p>
+              <div className="flex items-center justify-center h-6 w-6 rounded-md bg-[#DFE8FC36]">
+                <ChevronDown size={12} className="text-white cursor-pointer" />
+              </div>
+            </ListboxButton>
+            <ListboxOptions className="absolute mt-1 z-99 max-height-60 w-full overflow-auto rounded-md bg-[#071232] py-1 px-2 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+              {listboxSort.map((sort) => (
+                <ListboxOption
+                  value={sort}
+                  key={sort.id}
+                  className={({ focus }) => `
+                  relative cursor-pointer select-none py-2 pl-4 text-sm ${
+                    focus ? "bg-[#42485c] text-white" : "text-white"
+                  }
+                  `}
+                >
+                  {sort.name}
+                </ListboxOption>
+              ))}
+            </ListboxOptions>
+          </div>
+        </Listbox>
+        {/* Green button */}
         <div className="flex items-center gap-2">
           <div className="flex items-center justify-center tertiary-bg rounded-lg text-white gap-1 py-1 px-4">
             <div className="rounded-md bg-[#18BD78] p-1">
@@ -46,7 +80,7 @@ const Pharmacy = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-8">
         {/* Pharmacist Cards will go here */}
         {pharmacistList.map((pharmacist) => (
           <PharmacistCard
