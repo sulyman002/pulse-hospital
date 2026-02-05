@@ -38,6 +38,8 @@ const Pharmacy = () => {
           />
         </div>
       </div>
+
+      <div className=""></div>
     </section>
   );
 };
