@@ -1,7 +1,14 @@
+import { pharmacistList } from "@/app/lib/data";
+import { PharmacistData } from "@/app/types/types";
+import PharmacistCard from "@/app/ui/PharmacistCard";
 import { Plus, Search } from "lucide-react";
-import React from "react";
+
 
 const Pharmacy = () => {
+  const handleCardClick = (pharmacist: PharmacistData) => {
+    console.log("Clicked pharmacist:", pharmacist);
+    // Add your logic here (e.g., navigate to detail page, open modal, etc.)
+  };
   return (
     <section className="py-4 px-20 flex flex-col">
       <div className="flex items-center justify-between pb-6 border-b border-[#E6E8EC]">
@@ -39,7 +46,18 @@ const Pharmacy = () => {
         </div>
       </div>
 
-      <div className=""></div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {/* Pharmacist Cards will go here */}
+        {pharmacistList.map((pharmacist) => (
+          <PharmacistCard
+            key={pharmacist.id}
+            cardImage={pharmacist.cardImage}
+            name={pharmacist.name}
+            altText={`${pharmacist.name}'s profile`}
+            onCardClick={() => handleCardClick(pharmacist)}
+          />
+        ))}
+      </div>
     </section>
   );
 };
